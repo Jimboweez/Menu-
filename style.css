@@ -137,6 +137,23 @@ section{
   grid-gap: 1.5rem;
   align-items: center;
 }
+.counter-button {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.counter {
+  font-size: 16px;
+  color: #333;
+  opacity: 0.7;
+} 
 .box{
   position: relative;
   margin-top: 4rem;
@@ -198,6 +215,7 @@ section{
   margin: 4px 0 10px;
   color: var(--main-color);
   font-size: 1.2rem;
+  
 }
 .s-box p{
   line-height: 1.7;

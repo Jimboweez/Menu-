@@ -5,6 +5,7 @@
         <meta name = "viewport" content="width=device=width, initial-scale=1.0" >/
         <title>Menu</title>
         <link rel="stylesheet" href="style.css">
+        <script src ="Menu.js"></script>
         <link rel="stylesheet"
         href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +49,8 @@
                 <p>Smashed crispy beef patties with house seasoning, American cheese, pickles, diced onion, mayo, ketchup, and brown mustard on a toasted bun served with your choice of fries and a drink.</p>
             <a href="#" class ="btn">Learn More</a>
            </div>
+           
+          </form> 
         </section>
         <!--------------Menu------------>
         <section class="menu" id ="menu">
@@ -110,7 +113,14 @@
                     </div>
                     <h2>Chocolate Chip Cookie</h2>
                     <h3>Freshly baked chocolate chip cookie. Subcribe <a href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA"><b>MrBeast</b></a> for a free cookie.</h3>
-                    <span>3$</span>
+                    <span>
+                        <form>
+                            <button class="counter-button decrement">+</button>
+                            <span class="counter">0</span>
+                            <button class="counter-button increment" data-count="0">-</button>
+                            <h3>Cost: $3.50</h3>
+                        </form>
+                    </span>
                     <i class='bx bx-cart-alt'></i>
                 </div>
 
@@ -192,4 +202,20 @@
         </section>
 
     </body>
+    <script>
+        const counterButtons = document.querySelectorAll(".counter-button");
+const counters = document.querySelectorAll(".counter");
+
+counterButtons.forEach((button, index) => {
+    button.addEventListener("click", (e) => {
+        const currentCount = parseInt(counters[index].textContent);
+
+        if (e.target.classList.contains("increment")) {
+            counters[index].textContent = currentCount + 1;
+        } else if (e.target.classList.contains("decrement") && currentCount > 0) {
+            counters[index].textContent = currentCount - 1;
+        }
+    });
+}); 
+    </script>
 </html>
